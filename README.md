@@ -1,22 +1,21 @@
+I'll update the README.md to match your code structure and functionality. Here's the revised version:
+
+```markdown
 # Otakudesu Scraper - Python Project
 
 ![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Scraping](https://img.shields.io/badge/purpose-web%20scraping-yellowgreen)
 
-Sebuah web scraper untuk situs Otakudesu (situs anime Indonesia) yang ditulis dalam Python. Scraper ini dapat mengambil berbagai informasi anime dari situs Otakudesu secara otomatis.
+Scraper untuk situs Otakudesu (situs anime Indonesia) yang ditulis dalam Python. Scraper ini dapat mengambil berbagai informasi anime dari situs Otakudesu secara otomatis.
 
 ## Fitur Utama
-- 📺 Scraping daftar anime terbaru
-- 🔥 Scraping daftar anime populer
-- ℹ️ Scraping detail anime lengkap (judul, genre, rating, sinopsis, dll)
-- 📥 Scraping daftar episode dan link download
 - 🔍 Pencarian anime berdasarkan judul
-- 🎨 Tampilan berwarna di terminal (colorama)
-- 🧩 Struktur kode modular dan mudah dikembangkan
+- 📺 Daftar anime on-going (berkelanjutan)
+- 📚 Daftar semua anime yang tersedia
+- 📥 Daftar episode dan link embed player
+- ℹ️ Detail informasi anime (genre, status, rating)
 
 ## Prasyarat
-Sebelum menjalankan program ini, pastikan Anda telah menginstal:
 - Python 3.6+
 - pip (Python package manager)
 
@@ -32,133 +31,89 @@ cd otakudesu-scraper
 pip install -r requirements.txt
 ```
 
-### Dependensi Utama
-| Package | Version | Kegunaan |
-|---------|---------|----------|
-| requests | latest | Untuk melakukan HTTP requests |
-| beautifulsoup4 | latest | Untuk parsing HTML |
-| lxml | latest | HTML parser |
-| colorama | latest | Untuk tampilan berwarna di terminal |
-
-## Penggunaan
+## Cara Penggunaan
 Jalankan program utama dengan perintah:
 ```bash
 python otakudesu.py
 ```
 
-### Menu Interaktif
+### Menu Utama
 Setelah menjalankan program, Anda akan melihat menu berikut:
 ```
-=== Otakudesu Scraper ===
-1. Cari Anime
-2. Anime On Going
-3. Anime Full
-
-Pilih opsi [1-4]: 
+Pilih opsi:
+1. Search Anime
+2. Lihat Anime On Going
+3. Lihat Semua List Anime
+Masukkan pilihan (1/2/3): 
 ```
 
 ### Contoh Penggunaan Lengkap
-1. **Melihat anime terbaru**:
+1. **Pencarian Anime**:
    - Pilih opsi 1
-   - Program akan menampilkan daftar anime terbaru:
-   ```
-   Daftar Anime Terbaru:
-   [1] Jujutsu Kaisen 2nd Season
-       URL: https://otakudesu.wiki/anime/jujutsu-kaisen-2nd-season-sub-indo/
-   [2] Mushoku Tensei II: Isekai Ittara Honki Dasu
-       URL: https://otakudesu.wiki/anime/mushoku-tensei-ii-sub-indo/
-   ...
-   ```
-
-2. **Melihat anime populer**:
-   - Pilih opsi 2
-   - Program akan menampilkan daftar anime populer:
-   ```
-   Daftar Anime Populer:
-   [1] One Piece
-   [2] Attack on Titan: The Final Season
-   [3] Demon Slayer: Kimetsu no Yaiba
-   ...
-   ```
-
-3. **Mencari anime**:
-   - Pilih opsi 3
    - Masukkan judul anime (contoh: "demon slayer")
    - Program akan menampilkan hasil pencarian:
    ```
-   Hasil Pencarian untuk "demon slayer":
-   [1] Demon Slayer: Kimetsu no Yaiba
-   [2] Demon Slayer: Kimetsu no Yaiba Movie - Mugen Train
-   [3] Demon Slayer: Kimetsu no Yaiba - Entertainment District Arc
+   Ditemukan hasil:
+   1. Demon Slayer: Kimetsu no Yaiba — https://otakudesu.cloud/anime/demon-slayer-kimetsu-no-yaiba/
+   2. Demon Slayer Movie — https://otakudesu.cloud/anime/demon-slayer-movie/
    ...
    ```
-   - Pilih nomor anime untuk melihat detail lengkap
 
-### Contoh Output Detail Anime
-```markdown
-Judul: Demon Slayer: Kimetsu no Yaiba
-Japanese: 鬼滅の刃
-Rating: 8.6
-Status: Completed
-Tayang: Spring 2019
-Studio: ufotable
-Genre: Action, Demons, Historical, Shounen, Supernatural
-Jumlah Episode: 26
+2. **Lihat Anime On Going**:
+   - Pilih opsi 2
+   - Program akan menampilkan daftar anime yang sedang berlanjut:
+   ```
+   [LOAD] Anime On Going...
+   Ditemukan hasil:
+   1. One Piece Episode 1054 — https://otakudesu.cloud/anime/one-piece/
+   2. Jujutsu Kaisen Episode 24 — https://otakudesu.cloud/anime/jujutsu-kaisen/
+   ...
+   ```
 
-Sinopsis:
-Di era Taisho Jepang, Tanjiro Kamado adalah anak laki-laki yang baik hati yang menjadi 
-penjual arang untuk menghidupi keluarganya. Suatu hari, seluruh keluarganya dibantai 
-oleh iblis, kecuali adik perempuannya Nezuko yang berubah menjadi iblis. Untuk 
-mengembalikan Nezuko menjadi manusia dan membalas dendam pembunuh keluarganya, 
-Tanjiro menjadi pembasmi iblis.
+3. **Lihat Semua List Anime**:
+   - Pilih opsi 3
+   - Program akan menampilkan semua anime yang tersedia:
+   ```
+   [LOAD] Semua List Anime...
+   Ditemukan hasil:
+   1. Naruto Shippuden — https://otakudesu.cloud/anime/naruto-shippuden/
+   2. Attack on Titan — https://otakudesu.cloud/anime/attack-on-titan/
+   ...
+   ```
 
-Daftar Episode:
-1. Episode 1: Cruelty - https://otakudesu.wiki/episode/demon-slayer-ep-1/
-2. Episode 2: Trainer Sakonji Urokodaki - https://otakudesu.wiki/episode/demon-slayer-ep-2/
+### Melihat Detail Episode
+Setelah memilih anime, program akan menampilkan daftar episode:
+```
+DETAIL] Demon Slayer: Kimetsu no Yaiba
+
+1. Episode 1 — https://otakudesu.cloud/episode/demon-slayer-ep-1/
+2. Episode 2 — https://otakudesu.cloud/episode/demon-slayer-ep-2/
 ...
-26. Episode 26: New Mission - https://otakudesu.wiki/episode/demon-slayer-ep-26/
+```
 
-Link Download:
-[480p] https://download.link/480p
-[720p] https://download.link/720p
-[1080p] https://download.link/1080p
+### Mendapatkan Link Embed
+Pilih nomor episode untuk mendapatkan link embed player:
+```
+Pilih nomor episode untuk ambil semua embed link: 1
+
+🎬 Embed link yang ditemukan:
+https://example.com/embed/12345
+https://example.com/embed/67890
 ```
 
 ## Struktur Kode
 ```plaintext
 otakudesu-scraper/
-├── otakudesu.py           # Program utama
-├── scraper.py             # Modul utama untuk scraping
-├── utils.py               # Fungsi utilitas
+├── otakudesu.py           # Program utama (CLI interface)
 ├── requirements.txt       # Daftar dependensi
-├── LICENSE
 └── README.md
 ```
 
-## Berkontribusi
-Kontribusi selalu diterima! Berikut cara berkontribusi:
-1. Fork project ini
-2. Buat branch fitur baru (`git checkout -b fitur-baru`)
-3. Commit perubahan Anda (`git commit -am 'Menambahkan fitur baru'`)
-4. Push ke branch (`git push origin fitur-baru`)
-5. Buat Pull Request baru
-
-### Fitur yang Dapat Ditambahkan
-- [ ] Scraping anime berdasarkan musim
-- [ ] Scraping anime berdasarkan genre
-- [ ] Dukungan untuk download episode langsung
-- [ ] Export hasil ke format JSON/CSV
-- [ ] GUI versi sederhana
-
-## Lisensi
-Proyek ini dilisensikan di bawah Lisensi MIT - lihat file [LICENSE](LICENSE) untuk detailnya.
-
-## Catatan Penting
-1. Scraper ini dibuat untuk tujuan edukasi dan penggunaan pribadi
-2. Gunakan dengan bijak dan bertanggung jawab
-3. Situs Otakudesu mungkin mengubah struktur HTML mereka sewaktu-waktu yang dapat menyebabkan scraper berhenti bekerja
-4. Jika terjadi error, silakan buka issue di GitHub
-5. Dukung situs resmi dengan menonton anime melalui platform legal
+## Dependencies
+Package yang digunakan:
+- `requests` : Untuk melakukan HTTP requests
+- `beautifulsoup4` : Untuk parsing HTML
+- `lxml` : HTML parser
 
 ## Troubleshooting
 **Error: Module tidak ditemukan**
@@ -169,11 +124,33 @@ pip install -r requirements.txt
 
 **Error: Scraping gagal**
 1. Cek koneksi internet Anda
-2. Cek apakah struktur situs Otakudesu telah berubah
-3. Coba jalankan ulang program
+2. Cek apakah situs Otakudesu masih bisa diakses
+3. Cek apakah struktur situs Otakudesu telah berubah
 
-**Program tidak menampilkan warna:**
-Pastikan terminal Anda mendukung ANSI color codes
+**Hasil tidak ditemukan**
+- Coba gunakan keyword pencarian yang berbeda
+- Pastikan anime yang dicari tersedia di Otakudesu
+
+## Catatan Penting
+1. Scraper ini dibuat untuk tujuan edukasi
+2. Gunakan dengan bijak dan bertanggung jawab
+3. Struktur website dapat berubah sewaktu-waktu
+4. Dukung situs resmi dengan menonton anime melalui platform legal
 
 ---
 Dibuat dengan ❤️ oleh [lexaiko](https://github.com/lexaiko) | Jika terbantu, jangan lupa kasih ⭐!
+```
+
+Perubahan utama yang saya buat:
+1. Menyesuaikan fitur dengan fungsi yang ada di kode
+2. Menghapus fitur yang tidak ada di kode (seperti detail rating, sinopsis, dll)
+3. Memperbarui contoh penggunaan sesuai dengan alur kerja kode
+4. Menyederhanakan penjelasan instalasi (hanya perlu `pip install`)
+5. Menambahkan troubleshooting spesifik untuk kode ini
+6. Menghapus bagian kontribusi karena kode ini sederhana
+7. Memperbarui struktur file sesuai dengan kode Anda
+
+Untuk menjalankan program, pengguna hanya perlu:
+1. Install Python 3.6+
+2. Jalankan `pip install -r requirements.txt`
+3. Jalankan `python otakudesu.py`
