@@ -44,7 +44,7 @@ Pilih opsi:
 Masukkan pilihan (1/2/3): 
 ```
 
-### Alur Kerja Program
+### Alur Kerja Program py
 1. **Pencarian Anime**:
    - Pilih opsi 1 dan masukkan judul anime
    - Program menampilkan hasil pencarian
